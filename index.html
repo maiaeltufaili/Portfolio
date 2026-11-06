@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maia El Tufaili | Software Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Interactive Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">&lt;Maia<span>.dev</span> /&gt;</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-tag">🌸 Computer Science Graduate &amp; Developer</div>
+                <h1>Hi, I'm <span class="highlight">Maia</span></h1>
+                <h2>Software Engineer | Backend Systems &amp; Full-Stack</h2>
+                <p>Engineering robust backends, real-time event-driven data pipelines (CDC), high-concurrency systems, and interactive quantum computing web interfaces.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Explore My Projects ✨</a>
+                    <a href="#contact" class="btn btn-outline">Let's Connect 💕</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-card glass-card">
+                <div class="about-text">
+                    <p>I am a Computer Science graduate driven by solving hard architectural problems at scale. My engineering focus ranges from building <strong>sub-millisecond high-concurrency backend architectures</strong> to <strong>event-driven CDC pipelines</strong> with atomic consistency guarantees.</p>
+                    <p>I thrive on turning complex system bottlenecks into clean, resilient, and elegant software solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Backend &amp; Systems</h3>
+                    <p>Node.js, Express, TypeScript, Python, C++, REST APIs, WebSockets</p>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>Databases &amp; Infrastructure</h3>
+                    <p>PostgreSQL, Redis, MongoDB, Debezium, Redpanda/Kafka, Docker, Docker Compose</p>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="skill-icon">✨</div>
+                    <h3>Patterns &amp; Web</h3>
+                    <p>Transactional Outbox, Event-Driven Architecture, HTML5/CSS3, JavaScript (ES6+), React</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <h2 class="section-title">Featured Work</h2>
+            
+            <!-- Interactive Project Filters -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="infra">Distributed Systems</button>
+                <button class="filter-btn" data-filter="backend">Backend Scale</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="filter-btn" data-filter="frontend">Frontend &amp; UI</button>
+            </div>
+
+            <div class="projects-grid">
+                
+                <!-- Project 1: CDC Pipeline -->
+                <div class="project-card glass-card" data-category="infra">
+                    <div class="project-header">
+                        <span class="badge badge-infra">Distributed Systems</span>
+                        <h3>Real-Time CDC Caching &amp; Invalidation Pipeline</h3>
+                    </div>
+                    <p>An event-driven Change Data Capture pipeline designed to solve dual-write inconsistencies between PostgreSQL and Redis using the Transactional Outbox Pattern.</p>
+                    <ul class="key-points">
+                        <li>Atomic Outbox pattern prevents distributed transaction failures.</li>
+                        <li>Zero-latency async WAL capture via Debezium &amp; Redpanda.</li>
+                        <li>Idempotent Redis cache invalidation filtering out-of-order events.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>PostgreSQL</span><span>Redis</span><span>Debezium</span><span>Redpanda</span><span>TypeScript</span><span>Docker</span>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-sm btn-modal" data-modal="cdc-modal">Details 🔍</button>
+                        <a href="https://github.com/maiaeltufaili/Real-Time-CDC-Caching-Invalidation-Pipeline" target="_blank" class="project-link">GitHub ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Ticketing System -->
+                <div class="project-card glass-card" data-category="backend">
+                    <div class="project-header">
+                        <span class="badge badge-backend">Backend Scale</span>
+                        <h3>Flash Sale &amp; Event Ticketing Backend</h3>
+                    </div>
+                    <p>High-concurrency ticketing platform built to withstand extreme traffic spikes and eliminate race conditions/overselling during flash sales.</p>
+                    <ul class="key-points">
+                        <li>Sub-millisecond atomic inventory deductions via Redis <code>DECR</code>.</li>
+                        <li>Decouples fast in-memory checks from persistent PostgreSQL storage.</li>
+                        <li>Fully containerized architecture for instant single-command deployment.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>Node.js</span><span>Express</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-sm btn-modal" data-modal="ticket-modal">Details 🔍</button>
+                        <a href="https://github.com/maiaeltufaili/ticket-platform" target="_blank" class="project-link">GitHub ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Quantum Simulator -->
+                <div class="project-card glass-card" data-category="fullstack">
+                    <div class="project-header">
+                        <span class="badge badge-fullstack">Full-Stack</span>
+                        <h3>Quantum Circuit Simulator Web Application</h3>
+                    </div>
+                    <p>Interactive web-based visual quantum circuit simulator allowing real-time state calculation, persistent cloud storage, and secure user auth.</p>
+                    <ul class="key-points">
+                        <li>Real-time circuit simulation streaming via WebSockets.</li>
+                        <li>Secure session management with salted/hashed passwords.</li>
+                        <li>Persistent cloud database storage (MongoDB) with schema validation.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>Node.js</span><span>Express</span><span>MongoDB</span><span>WebSockets</span><span>HTML/CSS/JS</span>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-sm btn-modal" data-modal="quantum-modal">Details 🔍</button>
+                        <a href="https://github.com/maiaeltufaili/quantum-circuit-simulator" target="_blank" class="project-link">GitHub ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Dermocosmetique Web App -->
+                <div class="project-card glass-card" data-category="frontend">
+                    <div class="project-header">
+                        <span class="badge badge-fullstack">Frontend &amp; UI</span>
+                        <h3>Dermocosmetique Web Application</h3>
+                    </div>
+                    <p>Makeup and beauty e-commerce web platform created during a full-stack internship, emphasizing responsive design and clean UI components.</p>
+                    <ul class="key-points">
+                        <li>Built accessible, mobile-first responsive interfaces and layouts.</li>
+                        <li>Developed modern, reusable front-end UI components.</li>
+                        <li>Delivered as a production-level deliverable during a professional internship.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive UI</span>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-sm btn-modal" data-modal="dermo-modal">Details 🔍</button>
+                        <a href="https://github.com/maiaeltufaili/Dermocosmetique-Website" target="_blank" class="project-link">GitHub ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-card glass-card">
+                <p>I'm currently seeking full-time Software Engineering roles! Whether you want to discuss system architecture or review code, my inbox is always open.</p>
+                <div class="contact-buttons">
+                    <button class="btn btn-primary btn-modal" data-modal="contact-modal">Send Email 📧</button>
+                    <a href="https://github.com/maiaeltufaili" target="_blank" class="btn btn-outline">GitHub Profile 💖</a>
+                    <a href="https://linkedin.com/in/maiaeltufaili" target="_blank" class="btn btn-outline">LinkedIn 🌸</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Crafted with 💖 by Maia El Tufaili &copy; 2026</p>
+    </footer>
+
+    <!-- Interactive Modals -->
+    <div class="modal-overlay" id="modal-overlay">
+        
+        <!-- CDC Modal -->
+        <div class="modal-content glass-card" id="cdc-modal">
+            <button class="modal-close">&times;</button>
+            <span class="badge badge-infra">System Architecture</span>
+            <h3>Real-Time CDC Pipeline Architecture</h3>
+            <p><strong>Problem Solved:</strong> Dual-write problems occur when updating a database and cache separately, leading to state drift during failures.</p>
+            <p><strong>Solution:</strong> The Transactional Outbox Pattern writes changes to an outbox table within the same DB transaction. Debezium streams WAL events through Redpanda to Redis, ensuring eventual consistency without slowing down user-facing APIs.</p>
+        </div>
+
+        <!-- Ticket Modal -->
+        <div class="modal-content glass-card" id="ticket-modal">
+            <button class="modal-close">&times;</button>
+            <span class="badge badge-backend">Concurrency Control</span>
+            <h3>Flash Sale Engine Deep Dive</h3>
+            <p><strong>Atomic Inventory Control:</strong> Under high concurrency (1,000s req/sec), standard SQL transactions cause locks or race conditions. Redis single-threaded <code>DECR</code> guarantees ticket counts never cross below zero.</p>
+            <p><strong>Persistence:</strong> Successful Redis reservations spawn asynchronous write tasks to PostgreSQL to permanently persist order records.</p>
+        </div>
+
+        <!-- Quantum Modal -->
+        <div class="modal-content glass-card" id="quantum-modal">
+            <button class="modal-close">&times;</button>
+            <span class="badge badge-fullstack">Full-Stack Web App</span>
+            <h3>Quantum Simulator Features</h3>
+            <p><strong>Features:</strong> Visual gate placement, file imports/exports, server-side dynamic template rendering, session cookies, and WebSockets for streaming computational feedback to the browser.</p>
+        </div>
+
+        <!-- Dermocosmetique Modal -->
+        <div class="modal-content glass-card" id="dermo-modal">
+            <button class="modal-close">&times;</button>
+            <span class="badge badge-fullstack">Professional Experience</span>
+            <h3>Dermocosmetique Web Platform</h3>
+            <p><strong>Internship Project:</strong> Built during a full-stack internship focusing heavily on modern front-end user experience (UX) standards, visual design consistency, and clean DOM manipulation.</p>
+            <p><strong>Key Takeaways:</strong> Cross-browser accessibility, responsive layout engineering using flexible grids and flexbox, and structured component workflows.</p>
+        </div>
+
+        <!-- Interactive Contact Form Modal -->
+        <div class="modal-content glass-card" id="contact-modal">
+            <button class="modal-close">&times;</button>
+            <span class="badge badge-backend">Get In Touch</span>
+            <h3>Send Me a Message 🌸</h3>
+            
+            <form id="contact-form" action="YOUR_FORMSPREE_ENDPOINT_URL" method="POST" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; text-align: left;">
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--pink-light); margin-bottom: 0.3rem;">Your Name</label>
+                    <input type="text" name="name" required placeholder="Jane Doe" style="width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid var(--pink-primary); background: rgba(15, 10, 21, 0.8); color: var(--text-main); font-family: inherit;">
+                </div>
+                
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--pink-light); margin-bottom: 0.3rem;">Your Email</label>
+                    <input type="email" name="_replyto" required placeholder="jane@example.com" style="width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid var(--pink-primary); background: rgba(15, 10, 21, 0.8); color: var(--text-main); font-family: inherit;">
+                </div>
+                
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--pink-light); margin-bottom: 0.3rem;">Message</label>
+                    <textarea name="message" rows="4" required placeholder="Hi Maia, I came across your portfolio..." style="width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid var(--pink-primary); background: rgba(15, 10, 21, 0.8); color: var(--text-main); font-family: inherit; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Send Message ✨</button>
+                <p id="form-status" style="font-size: 0.85rem; text-align: center; color: var(--pink-light); display: none;"></p>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
