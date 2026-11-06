@@ -6,7 +6,7 @@ Designed with an aesthetic glassmorphism UI, a soft dark-pink theme, custom part
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Responsive & Mobile-First Layout**: Fully adaptable across mobile, tablet, and desktop viewports.
 - **Interactive Project Filtering**: Filter featured projects by domain (*All*, *Distributed Systems*, *Backend Scale*, *Full-Stack*, *Frontend & UI*).
@@ -17,7 +17,7 @@ Designed with an aesthetic glassmorphism UI, a soft dark-pink theme, custom part
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Structure**: HTML5 (Semantic & Accessible Markup)
 - **Styling**: Modern CSS3 (CSS Variables, Flexbox, CSS Grid, Glassmorphism Backdrop Filters)
@@ -26,7 +26,7 @@ Designed with an aesthetic glassmorphism UI, a soft dark-pink theme, custom part
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 .
